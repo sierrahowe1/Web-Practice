@@ -1,26 +1,45 @@
 body {
-    background-color:lightyellow;
+    background-color:rgb(255, 225, 244);
+    margin:0;
+    font-family: system-ui, Arial, Helvetica, sans-serif;
+}
 
-    display: flex;
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
+.app {
+    max-width: 750px;
+    padding: 0 16px;
+    margin: 40px auto;
+    display: grid;
+    gap: 16px;
+}
 
 
+.card {
+    background-color:honeydew;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+#timeDisplay {
+    font-size: 50px;
+    font-weight: 700;
+    margin: 12px 0;
 
 }
 
-h1 {
-
-    font-size:medium;
-    font-
-
-
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: honeydew;
+    cursor: pointer;
+    
 }
 
-img {
-
-
-
-
+input {
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 60%;
 }
+
