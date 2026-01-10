@@ -123,6 +123,7 @@ taskForm.addEventListener("submit", (e) => {
 
 clear.addEventListener("click", () => {
     tasks = tasks.filter((t) => !t.done);
+    console.log("Clear clicked");
     saveTasks();
     renderTasks();
 });
