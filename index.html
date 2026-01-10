@@ -2,22 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Practice Page</title>
+    <meta name="viewport" content="width=device-width, inital-scale=1.0" />
+    <title>Study Timer</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <main class="app">
+        <h1>Study Timer</h1>
 
-    <h1>This is my practice site for SWE4213</h1>
+        <section class="card">
+            <h2>Timer</h2>
 
-    
+            <div id="timeDisplay">25:00</div>
 
-<div id="photo-conatiner">
-    <img id="photo" src="https://picsum.photos/600/400" alt="Random photo">
-    <p id="imageCountLabel">Image Count: 0</p>
-</div>
+            <button id="startButton">Start</button>
+            <button id="pauseButton">Pause</button>
+            <button id="resetButton">Reset</button>
 
-    <button id="newImage">New Image</button>
+            <p id="sessions">Sessions completed: 0</p>
+        </section>
+
+        <section class="card">
+            <h2>Tasks</h2>
+
+            <form id="taskForm">
+                <input id="taskInput" type="text" placeholder="Add a task..." />
+                <button type="submit">Add</button>
+            </form>
+
+            <ul id="list"></ul>
+
+            <button id="clear">Clear</button>
+        </section>
+    </main>
 
     <script src="script.js"></script>
+
 </body>
 </html>
