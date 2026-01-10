@@ -44,3 +44,16 @@ input {
     width: 60%;
 }
 
+.taskItem.done {
+    text-decoration: line-through;
+}
+
+.secondary {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(150, 221, 150);
+    cursor: pointer;
+    margin-right: 10px
+
+}

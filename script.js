@@ -52,3 +52,80 @@ resetButton.addEventListener("click", () => {
 });
 
 time();
+
+let tasks = loadTasks();
+
+function saveTasks() {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+function loadTasks() {
+    const local = localStorage.getItem("tasks");
+    if(local) {
+        return JSON.parse(local);
+    } else {
+        return [];
+    }
+}
+
+function renderTasks() {
+    list.innerHTML = "";
+    tasks.forEach((task) => {
+        const paper = document.createElement("paper");
+        paper.className = "taskItem" + (task.done ? " done" : "");
+
+        const left = document.createElement("div");
+        left.textContent = taskt.left;
+
+        const right = document.createElement("div");
+
+        const toggle = document.createElement("button");
+        toggle.className = "secondary";
+        toggle.textContent = task.done ? "Undo" : "Done";
+
+        toggle.addEventListener("click", () => {
+            task.done = !task.done;
+            saveTasks();
+            renderTasks();
+        });
+
+        const deleteButton = document.createElement("button");
+        deleteButton.className = "secondary";
+        deleteButton.textContent = "Delete";
+
+        deleteButton.addEventListener("click", () => {
+            tasks = tasks.filter((t) => t.id !== task.id);
+            saveTasks();
+            renderTasks();
+        });
+
+        right.appendChild(toggle);
+        right.appendChild(deleteButton);
+
+        paper.appendChild(left);
+        paper.appendChild(right);
+
+        list.appendChild(paper);
+    });
+}
+
+taskForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const text = taskInput.value.trim();
+    if(!text) return;
+
+    tasks.push({id: Date.now(), text, done: false});
+    tasksInput.value = "";
+    saveTasks();
+    renderTasks();
+});
+
+clear.addEventListener("click", () => {
+    tasks = tasks.filter((t) => !t.done);
+    saveTasks();
+    renderTasks();
+});
+
+renderTasks();
+
