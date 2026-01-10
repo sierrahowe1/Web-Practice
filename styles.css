@@ -51,6 +51,8 @@ input {
 .secondary {
 padding: 10px 15px;
     border: none;
+    position: relative;
+    right: 50px;
     border-radius: 10px;
     background-color: rgb(150, 221, 150);
     cursor: pointer;
