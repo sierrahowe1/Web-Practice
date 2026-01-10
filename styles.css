@@ -49,19 +49,18 @@ input {
 }
 
 .secondary {
-padding: 10px 15px;
+    padding: 8px 14px;
     border: none;
-    display: flex;
-    flex-direction: row;
+  
+    display: inline-flex;          /* centers content + behaves nicely in a row */
     align-items: center;
     justify-content: center;
-    height: 10px;
-    width: 50px;
-    left: 100px;
-    bottom: 20px;
+  
+    min-height: 36px;              /* readable click target */
     border-radius: 10px;
     background-color: rgb(150, 221, 150);
     cursor: pointer;
-    margin-right: 10px
-
-}
+  
+    white-space: nowrap;           /* prevents wrapping like "De\nlete" */
+  }
+  
