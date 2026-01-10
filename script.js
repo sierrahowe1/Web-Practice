@@ -35,7 +35,7 @@ function tick() {
 }
 
 startButton.addEventListener("click", () => {
-    if(interval != null) return;
+    if(interval !== null) return;
     interval = setInterval(tick, 1000);
 });
 
@@ -71,11 +71,11 @@ function loadTasks() {
 function renderTasks() {
     list.innerHTML = "";
     tasks.forEach((task) => {
-        const paper = document.createElement("paper");
+        const paper = document.createElement("li");
         paper.className = "taskItem" + (task.done ? " done" : "");
 
         const left = document.createElement("div");
-        left.textContent = taskt.left;
+        left.textContent = task.text;
 
         const right = document.createElement("div");
 
@@ -116,7 +116,7 @@ taskForm.addEventListener("submit", (e) => {
     if(!text) return;
 
     tasks.push({id: Date.now(), text, done: false});
-    tasksInput.value = "";
+    taskInput.value = "";
     saveTasks();
     renderTasks();
 });
