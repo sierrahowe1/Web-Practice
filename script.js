@@ -27,7 +27,7 @@ function tick() {
         clearInterval(interval);
         interval = null;
         sessions++;
-        sessions.textContent = `Sessions completed: ${sessions}`;
+        session.textContent = `Sessions completed: ${sessions}`;
         seconds = 25 * 60;
         time();
         alert("Take a short break!");
