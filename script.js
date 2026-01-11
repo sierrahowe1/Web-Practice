@@ -9,7 +9,7 @@ const taskInput = document.getElementById("taskInput");
 const list = document.getElementById("list");
 const clear = document.getElementById("clear");
 
-let seconds = 25*60;
+let seconds = 5;
 let interval = null;
 let sessions = 0;
 
