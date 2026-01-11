@@ -2,7 +2,7 @@ const timeDisplay = document.getElementById("timeDisplay");
 const startButton = document.getElementById("startButton");
 const pauseButton = document.getElementById("pauseButton");
 const resetButton = document.getElementById("resetButton");
-const sessions = document.getElementById("session");
+const session = document.getElementById("session");
 
 const taskForm = document.getElementById("taskForm");
 const taskInput = document.getElementById("taskInput");
@@ -27,7 +27,7 @@ function tick() {
         clearInterval(interval);
         interval = null;
         sessions++;
-        session.textContent = `Sessions completed: ${sessions}`;
+        sessions.textContent = `Sessions completed: ${sessions}`;
         seconds = 25 * 60;
         time();
         alert("Take a short break!");
