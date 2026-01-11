@@ -2,14 +2,14 @@ const timeDisplay = document.getElementById("timeDisplay");
 const startButton = document.getElementById("startButton");
 const pauseButton = document.getElementById("pauseButton");
 const resetButton = document.getElementById("resetButton");
-const session = document.getElementById("session");
+const sessions = document.getElementById("session");
 
 const taskForm = document.getElementById("taskForm");
 const taskInput = document.getElementById("taskInput");
 const list = document.getElementById("list");
 const clear = document.getElementById("clear");
 
-let seconds = 5;
+let seconds = 25*60;
 let interval = null;
 let sessions = 0;
 
